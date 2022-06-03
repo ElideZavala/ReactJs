@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import RisizeApp from "./RisizeApp";
+import RisizeApp from "./RisizeApp";
 // import FetchCard from "./FetchCard";
 import Lifecycle from "./Lifecycle";
 
@@ -11,7 +11,8 @@ function App() {
       <button onClick={() => setShow(!show)}> 
         Show/Hide
       </button>
-      <Lifecycle />
+      {/* <Lifecycle /> */}
+      {show && <Lifecycle/>}
       {/* <FetchCard /> */}
       {/* { show && <RisizeApp/>} */}
     </div>

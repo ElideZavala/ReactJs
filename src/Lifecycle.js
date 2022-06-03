@@ -13,26 +13,44 @@ const Lifecycle = () => {
 		// S ejecutara la primera que carge el componente y cambie el estado que cambie no se ejecutara la funcion. 
 		// Solo se ejecuta en una ocacion
 		console.log('useEffect []'); 
+		return () => {
+			console.log('cleanup useEffect []')
+		}
 	}, [])
 
 	useEffect(() => {
 		// Se ejecutara cada que se ejecute una fución
 		console.log('useEffect no dependency'); 
+		return () => {
+			console.log('cleanup useEffect no dependect')
+		}
 	})
 
 	useEffect(() => {
 		// Se ejecutara normalmene en la primera carga del componente y se ejecutara nuevamente 
 		// cada que alla un cambio de counter1, en esa dependencia.  
 		console.log(counter1); 
+
+		return () => {
+			console.log('cleanup useEffect [counter 1]')
+		}
 	}, [counter1])
 
 	
 	useEffect(() => {
 		console.log(counter2)
+
+		return () => {
+			console.log('cleanup useEffect [counter 2]')
+		}
 	 }, [counter2])
 	 	
 	useEffect(() => {
 		console.log('useEffect [counter1, counter2]')
+
+		return () => {
+			console.log('cleanup useEffect [counter 1, counter 2]')
+		}
 	}, [counter1, counter2])
 
   return (
