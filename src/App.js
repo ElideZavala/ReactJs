@@ -1,11 +1,19 @@
-import FetchCard from "./FetchCard";
-// import Lifecycle from "./Lifecycle";
+import React, { useState } from 'react';
+// import RisizeApp from "./RisizeApp";
+// import FetchCard from "./FetchCard";
+import Lifecycle from "./Lifecycle";
 
 function App() {
+  const [show, setShow] = useState(false);
+
   return (
     <div>
-      {/* <Lifecycle /> */}
-      <FetchCard />
+      <button onClick={() => setShow(!show)}> 
+        Show/Hide
+      </button>
+      <Lifecycle />
+      {/* <FetchCard /> */}
+      {/* { show && <RisizeApp/>} */}
     </div>
   );
 }

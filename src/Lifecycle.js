@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 const Lifecycle = () => {
+	console.log('Login-render')
+
 	const [counter1, setcounter1] = useState(0);
 	const [counter2, setcounter2] = useState(0);
+	
 
 	// UseEffec es una funcion que se ejecuta cuando el componente se renderiza
 
@@ -34,6 +37,7 @@ const Lifecycle = () => {
 
   return (
 		<div>
+			{console.log('ruturn-render')}
 			<h1>Click c1: {counter1}</h1>
 			<h1>Click c1: {counter2}</h1>
 			<button onClick={() => setcounter1(counter1 + 1)}>
